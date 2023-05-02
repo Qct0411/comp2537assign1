@@ -1,3 +1,5 @@
+
+require("./utils.js");
 const express = require('express');
 const session = require('express-session');
 const bcrypt = require('bcrypt');
@@ -7,7 +9,7 @@ require('dotenv').config();
 const app = express();
 
 const Joi = require("joi");
-const { database } = require('./dbconnection.js');
+const { database } = require('dbconnection');
 
 /* secret information section */
 const mongodb_host = process.env.MONGODB_HOST;
