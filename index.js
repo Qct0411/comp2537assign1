@@ -7,7 +7,7 @@ require('dotenv').config();
 const app = express();
 
 const Joi = require("joi");
-const { database } = require('./dbconnection');
+const { database } = require('./dbconnection.js');
 
 /* secret information section */
 const mongodb_host = process.env.MONGODB_HOST;
