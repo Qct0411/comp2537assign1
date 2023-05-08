@@ -1,0 +1,15 @@
+<%- include("templates/header") %> 
+<% if(!username1) { %>
+    <h1>Signup Failed</h1>
+    <p>username required</p>
+    <a href="/signup">Back to signup</a>
+<% } else if(!email1) { %>
+    <h1>Signup Failed</h1>
+    <p>email required</p>
+    <a href="/signup">Back to signup</a>
+<% } else if(!password1) { %>
+    <h1>Signup Failed</h1>
+    <p>password required</p>
+    <a href="/signup">Back to signup</a>
+<% } %>
+<%- include("templates/footer") %>

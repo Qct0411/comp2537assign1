@@ -1,0 +1,5 @@
+<%- include("templates/header") %> 
+<h1>Welcome <%= username %>!</h1>
+<form action="/members" method="get" style="display: inline-block;"><button class="btn btn-primary rounded-pill px-3">members</button></form>
+<form action="/logout" method="post" style="display: inline-block;"><button class="btn btn-secondary rounded-pill px-3">Logout</button><br /></form>
+<%- include("templates/footer") %>

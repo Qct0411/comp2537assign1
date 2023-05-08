@@ -1,0 +1,11 @@
+<div>
+    <p><%= user.username %> (<%= user.user_type %>)</p>
+    <form action="/promote" method="post" style="display: inline-block;">
+    <input type="text" class="form-control" name='username' value="<%= user.username %>" hidden>
+    <button class="btn btn-primary rounded-pill px-3">Promote to Admin</button>
+    </form>
+    <form action="/demote" method="post" style="display: inline-block;">
+        <input type="text" class="form-control" name='username' value="<%= user.username %>" hidden>
+        <button class="btn btn-secondary rounded-pill px-3">Demote to user</button>
+        </form>
+</div><br/>
