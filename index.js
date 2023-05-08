@@ -73,8 +73,16 @@ function adminAuth(req,res,next){
     } else {
         res.redirect("/login");
     }
-    
 }
+
+function sessionAuth(req,res,next){
+    if(req.session.authenticated){
+        next();
+    } else {
+        res.redirect("/login");
+    }
+}
+
 app.get('/', (req, res) => {
     if (!req.session.authenticated) {
         res.render('index');
@@ -175,7 +183,7 @@ app.post('/loginsubmit', async (req, res) => {
     }
 });
 
-app.get('/admin', adminAuth, async(req, res) => {
+app.get('/admin',sessionAuth, adminAuth, async(req, res) => {
     const result = await userCollection.find({}).project({email: 1, username: 1,user_type:1, _id: 1}).toArray();
     res.render('admin', {users: result});
 });
